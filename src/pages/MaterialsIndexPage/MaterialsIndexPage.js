@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import MaterialCard from "../../components/MaterialCard/MaterialCard";
+import "./MaterialsIndexPage.css";
 
 function MaterialsIndexPage() {
 	const [materials, setMaterials] = useState([]);
@@ -22,12 +23,12 @@ function MaterialsIndexPage() {
 	}, []);
 
 	return (
-		<section>
+		<div className="container">
 			<h1>Materials</h1>
 			{materials.map((material) => {
 				return <MaterialCard material={material} />;
 			})}
-		</section>
+		</div>
 	);
 }
 

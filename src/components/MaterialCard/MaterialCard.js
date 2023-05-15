@@ -7,27 +7,48 @@ function MaterialCard({ material }) {
 	return (
 		<>
 			{detailsHidden ? (
-				<>
-					<div key={material.id} className="material-card">
-						<h4>{material.name.toUpperCase()}</h4>
-						<button onClick={() => setDetailsHidden(!detailsHidden)}>
-							Show Details
-						</button>
-						<img src={material.image} alt={material.name} />
-					</div>
-				</>
+				<div className="details-hidden">
+					<h4>{material.name.toUpperCase()}</h4>
+					<button onClick={() => setDetailsHidden(!detailsHidden)}>
+						Show Details
+					</button>
+					<img src={material.image} alt={material.name} />
+				</div>
 			) : (
 				<>
-					<div key={material.id} className="material-card">
-						<h4>{material.name.toUpperCase()}</h4>
-						<button onClick={() => setDetailsHidden(!detailsHidden)}>
-							Hide Details
-						</button>
+					<div key={material.id} className="details-shown">
+						<div>
+							<h4>{material.name.toUpperCase()}</h4>
+							<button onClick={() => setDetailsHidden(!detailsHidden)}>
+								Hide Details
+							</button>
+						</div>
+						<img src={material.image} alt={material.name} />
 						<ul>
-							<li>Common Locations: {material.common_locations}</li>
-							<li>Hearts Recovered: {material.hearts_recovered}</li>
-							<li>Cooking Effect: {material.cooking_effect}</li>
-							<li>Description: {material.description}</li>
+							<li>
+								<p>
+									<strong>Common Locations</strong>
+								</p>
+								<p>{material.common_locations}</p>
+							</li>
+							<li>
+								<p>
+									<strong>Hearts Recovered</strong>
+								</p>
+								<p>{material.hearts_recovered}</p>
+							</li>
+							<li>
+								<p>
+									<strong>Cooking Effect</strong>
+								</p>
+								<p>{material.cooking_effect}</p>
+							</li>
+							<li>
+								<p>
+									<strong>Description</strong>
+								</p>
+								<p>{material.description}</p>
+							</li>
 						</ul>
 					</div>
 				</>
