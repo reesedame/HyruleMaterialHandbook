@@ -1,0 +1,5 @@
+.material-card {
+    display: inline-block;
+    border-style: solid;
+    padding: 1em;
+}

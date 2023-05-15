@@ -23,7 +23,7 @@ function MaterialsIndexPage() {
 
 	return (
 		<section>
-			<h1>Matertials</h1>
+			<h1>Materials</h1>
 			{materials.map((material) => {
 				return <MaterialCard material={material} />;
 			})}
