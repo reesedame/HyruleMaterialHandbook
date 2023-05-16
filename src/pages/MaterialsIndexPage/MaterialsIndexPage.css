@@ -2,7 +2,21 @@
     display: grid;
     justify-items: center;
     font-family: serif;
-    font-weight: 750;
+}
+
+.index-sub-header {
+    padding: 1em;
+    display: grid;
+    justify-items: center;
+    margin-bottom: 1em;
+    background-color: rgba(1, 212, 250, .4);
+    border-radius: 12px;
+    margin-top: 1em;
+}
+
+.index-sub-header p {
+    color: white;
+    display: inline;
 }
 
 h1 {

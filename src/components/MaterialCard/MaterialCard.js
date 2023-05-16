@@ -29,7 +29,7 @@ function MaterialCard({ material }) {
 									<strong>Common Locations</strong>
 								</p>
 								{material.common_locations.map((location, index) => {
-									return <p>{location}</p>;
+									return <p key={index}>{location}</p>;
 								})}
 							</li>
 							<li>
@@ -43,8 +43,10 @@ function MaterialCard({ material }) {
 									<strong>Cooking Effect</strong>
 								</p>
 								<p>
-									{material.cooking_effect.charAt(0).toUpperCase() +
-										material.cooking_effect.slice(1)}
+									{material.cooking_effect === ""
+										? "None"
+										: material.cooking_effect.charAt(0).toUpperCase() +
+										  material.cooking_effect.slice(1)}
 								</p>
 							</li>
 							<li>
