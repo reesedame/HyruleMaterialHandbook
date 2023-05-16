@@ -1,6 +1,8 @@
 .App {
-  background-image: url("https://i.pinimg.com/originals/f8/62/f9/f862f9d6e7c98afb8fa09d5e0684516f.png");
+  background-image: url("./../../../public/assets/BreathOfTheWildScenery.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }

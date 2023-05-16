@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 function Header() {
 	return (
 		<nav>
-			<Link to="/">Home</Link>
-			&nbsp; | &nbsp;
-			<Link to="/materials">Materials</Link>
+			<ul>
+				<li>
+					<Link to="/">Home</Link>
+				</li>
+				<li>
+					<Link to="/materials">Materials</Link>
+				</li>
+			</ul>
 		</nav>
 	);
 }

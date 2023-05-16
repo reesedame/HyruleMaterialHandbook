@@ -1,0 +1,33 @@
+.container {
+    display: grid;
+    justify-items: center;
+}
+
+.title {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: rgba(1, 212, 250, .6);
+    color: white;
+    border-radius: 12px;
+    margin-top: 5em;
+    text-align: center;
+    max-width: 50%;
+}
+
+.home-page-content {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: rgba(1, 212, 250, .6);
+    color: white;
+    border-radius: 12px;
+    margin-top: 1em;
+    text-align: center;
+    max-width: 50%;
+    font-size: 1.75em;
+}
+
+.home-page-content a {
+    background-color: darkgreen;
+    padding: 0.25em;
+    border-radius: 12px;
+}

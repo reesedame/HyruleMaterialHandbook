@@ -20,9 +20,14 @@ img {
 }
 
 .details-shown {
-    border-style: solid;
     padding: 1em;
     max-width: min-content;
+    display: grid;
+    justify-items: center;
+    margin-bottom: 1em;
+    background-color: rgba(1, 212, 250, .4);
+    color: white;
+    border-radius: 12px;
 }
 
 .details-shown > ul {
