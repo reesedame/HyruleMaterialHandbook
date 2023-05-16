@@ -13,7 +13,7 @@
     margin-top: 5em;
     text-align: center;
     max-width: 50%;
-    max-height: 25%;
+    max-height: fit-content;
     font-family: "Playfair Display SC", serif;
     align-self: center;
 }
@@ -24,8 +24,8 @@
     color: white;
     border-radius: 12px;
     text-align: center;
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 25em;
+    max-height: 18em;
     font-size: 1.75em;
     font-family: "Playfair Display", serif;
 }

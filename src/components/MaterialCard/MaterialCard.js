@@ -1,5 +1,6 @@
 import "./MaterialCard.css";
 import { useState } from "react";
+// import HeartContainers from "../HeartContainers/HeartContainers";
 
 function MaterialCard({ material }) {
 	const [detailsHidden, setDetailsHidden] = useState(true);
@@ -16,7 +17,7 @@ function MaterialCard({ material }) {
 				</div>
 			) : (
 				<>
-					<div key={material.id} className="details-shown">
+					<div className="details-shown">
 						<h4>{material.name.toUpperCase()}</h4>
 						<button onClick={() => setDetailsHidden(!detailsHidden)}>
 							Hide Details
@@ -27,7 +28,7 @@ function MaterialCard({ material }) {
 								<p>
 									<strong>Common Locations</strong>
 								</p>
-								{material.common_locations.map((location) => {
+								{material.common_locations.map((location, index) => {
 									return <p>{location}</p>;
 								})}
 							</li>
@@ -35,7 +36,6 @@ function MaterialCard({ material }) {
 								<p>
 									<strong>Hearts Recovered</strong>
 								</p>
-								<i class="fa-solid fa-heart"></i>
 								<p>{material.hearts_recovered}</p>
 							</li>
 							<li>
