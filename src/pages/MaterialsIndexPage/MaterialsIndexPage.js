@@ -9,6 +9,18 @@ function MaterialsIndexPage() {
 	const [allMaterials, setAllMaterials] = useState([]);
 	const [cookingEffects, setCookingEffects] = useState([]);
 
+	const sortOptions = [
+		{ value: "Alphabetical", label: "Alphabetical" },
+		{
+			value: "Hearts Recovered: High - Low",
+			label: "Hearts Recovered: High - Low",
+		},
+		{
+			value: "Hearts Recovered: Low - High",
+			label: "Hearts Recovered: Low - High",
+		},
+	];
+
 	const fetchMaterials = async () => {
 		try {
 			const response = await fetch(
@@ -106,6 +118,36 @@ function MaterialsIndexPage() {
 		}
 	}
 
+	function handleSort(selectedSortOption) {
+		if (selectedSortOption.value === "Alphabetical") {
+			let sortedMaterials = [...materials];
+			sortedMaterials.sort((a, b) =>
+				a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+			);
+			setMaterials(sortedMaterials);
+		} else if (selectedSortOption.value === "Hearts Recovered: High - Low") {
+			let sortedMaterials = [...materials];
+			sortedMaterials.sort((a, b) =>
+				a.hearts_recovered < b.hearts_recovered
+					? 1
+					: a.hearts_recovered > b.hearts_recovered
+					? -1
+					: 0
+			);
+			setMaterials(sortedMaterials);
+		} else {
+			let sortedMaterials = [...materials];
+			sortedMaterials.sort((a, b) =>
+				a.hearts_recovered > b.hearts_recovered
+					? 1
+					: a.hearts_recovered < b.hearts_recovered
+					? -1
+					: 0
+			);
+			setMaterials(sortedMaterials);
+		}
+	}
+
 	return (
 		<div className="container">
 			<div className="index-sub-header">
@@ -114,6 +156,8 @@ function MaterialsIndexPage() {
 				<Select options={locations} onChange={handleLocationFilter} />
 				<p>Filter by cooking effect: </p>
 				<Select options={cookingEffects} onChange={handleCookingEffectFilter} />
+				<p>Sort: </p>
+				<Select options={sortOptions} onChange={handleSort} />
 			</div>
 			{materials.map((material) => {
 				return <MaterialCard material={material} key={material.id} />;
