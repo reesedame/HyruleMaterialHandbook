@@ -11,10 +11,10 @@ function HomePage() {
 			<div className="home-page-content">
 				<h3 id="welcome-header">Welcome!</h3>
 				<p>
-					Here you will find all of the materials featured in the game Breath of
-					the Wild. Clicking on the show details button will reveal additional
-					information about each material. You can also filter and sort the
-					materials using the dropdown menu.
+					Here you will find all of the materials you can gather in the game
+					Breath of the Wild. Clicking on the show details button will reveal
+					additional information about each material. You can also filter and
+					sort the materials using the dropdown menu.
 				</p>
 				<p>
 					I hope you will find this information useful as you traverse through

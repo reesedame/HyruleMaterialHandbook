@@ -1,11 +1,12 @@
 .container {
     min-width: 100vw;
     max-width: 100vw;
-    display: inline-grid;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     column-gap: 1em;
     justify-items: center;
     align-items: center;
+    align-content: space-between;
     font-family: serif;
 }
 

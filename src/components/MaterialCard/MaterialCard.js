@@ -9,7 +9,7 @@ function MaterialCard({ material }) {
 		<>
 			{detailsHidden ? (
 				<div className="details-hidden">
-					<h2>{material.name.toUpperCase()}</h2>
+					<h2 className="material-name">{material.name.toUpperCase()}</h2>
 					<button onClick={() => setDetailsHidden(!detailsHidden)}>
 						Show Details
 					</button>
@@ -18,44 +18,46 @@ function MaterialCard({ material }) {
 			) : (
 				<>
 					<div className="details-shown">
-						<h2>{material.name.toUpperCase()}</h2>
+						<h2 className="material-name">{material.name.toUpperCase()}</h2>
 						<button onClick={() => setDetailsHidden(!detailsHidden)}>
 							Hide Details
 						</button>
-						<img src={material.image} alt={material.name} />
-						<ul>
-							<li>
-								<p>
-									<strong>Common Locations</strong>
-								</p>
-								{material.common_locations.map((location, index) => {
-									return <p key={index}>{location}</p>;
-								})}
-							</li>
-							<li>
-								<p>
-									<strong>Hearts Recovered</strong>
-								</p>
-								<p>{material.hearts_recovered}</p>
-							</li>
-							<li>
-								<p>
-									<strong>Cooking Effect</strong>
-								</p>
-								<p>
-									{material.cooking_effect === ""
-										? "None"
-										: material.cooking_effect.charAt(0).toUpperCase() +
-										  material.cooking_effect.slice(1)}
-								</p>
-							</li>
-							<li>
-								<p>
-									<strong>Description</strong>
-								</p>
-								<p>{material.description}</p>
-							</li>
-						</ul>
+						{/* <img src={material.image} alt={material.name} /> */}
+						<div className="detail-contents">
+							<ul>
+								<li>
+									<p>
+										<strong>Common Locations</strong>
+									</p>
+									{material.common_locations.map((location, index) => {
+										return <p key={index}>{location}</p>;
+									})}
+								</li>
+								<li>
+									<p>
+										<strong>Hearts Recovered</strong>
+									</p>
+									<p>{material.hearts_recovered}</p>
+								</li>
+								<li>
+									<p>
+										<strong>Cooking Effect</strong>
+									</p>
+									<p>
+										{material.cooking_effect === ""
+											? "None"
+											: material.cooking_effect.charAt(0).toUpperCase() +
+											  material.cooking_effect.slice(1)}
+									</p>
+								</li>
+								<li>
+									<p>
+										<strong>Description</strong>
+									</p>
+									<p>{material.description}</p>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</>
 			)}
