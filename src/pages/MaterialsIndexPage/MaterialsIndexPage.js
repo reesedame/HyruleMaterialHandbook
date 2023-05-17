@@ -120,21 +120,15 @@ function MaterialsIndexPage() {
 
 	function handleCookingEffectFilter(selectedCookingEffect) {
 		let filteredMaterials = [];
-		console.log("Function started!");
 		if (selectedCookingEffect.value === "All") {
-			console.log("No filter applied!");
 			filteredMaterials = allMaterials;
 			setCookingEffectFilteredMaterials([]);
 		} else {
-			console.log("filteredMaterials before forEach:");
-			console.log(filteredMaterials);
 			allMaterials.forEach((material) => {
 				if (material.cooking_effect === selectedCookingEffect.value) {
 					filteredMaterials.push(material);
 				}
 			});
-			console.log("filteredMaterials after forEach:");
-			console.log(filteredMaterials);
 			setCookingEffectFilteredMaterials(filteredMaterials);
 		}
 		if (locationFilteredMaterials.length === 0) {
@@ -178,20 +172,30 @@ function MaterialsIndexPage() {
 	}
 
 	return (
-		<div className="container">
+		<>
 			<div className="index-sub-header">
-				<h1>Materials</h1>
-				<p>Filter by location: </p>
-				<Select options={locations} onChange={handleLocationFilter} />
-				<p>Filter by cooking effect: </p>
-				<Select options={cookingEffects} onChange={handleCookingEffectFilter} />
-				<p>Sort: </p>
-				<Select options={sortOptions} onChange={handleSort} />
+				<div className="selector">
+					<p>Sort: </p>
+					<Select options={sortOptions} onChange={handleSort} />
+				</div>
+				<div className="selector">
+					<p>Filter by location: </p>
+					<Select options={locations} onChange={handleLocationFilter} />
+				</div>
+				<div className="selector">
+					<p>Filter by cooking effect: </p>
+					<Select
+						options={cookingEffects}
+						onChange={handleCookingEffectFilter}
+					/>
+				</div>
 			</div>
-			{materials.map((material) => {
-				return <MaterialCard material={material} key={material.id} />;
-			})}
-		</div>
+			<div className="container">
+				{materials.map((material) => {
+					return <MaterialCard material={material} key={material.id} />;
+				})}
+			</div>
+		</>
 	);
 }
 

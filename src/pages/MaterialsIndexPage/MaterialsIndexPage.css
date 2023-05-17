@@ -6,20 +6,22 @@
 
 .index-sub-header {
     padding: 1em;
-    display: grid;
-    justify-items: center;
-    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.selector {
+    align-self: center;
+    width: fit-content;
+    padding: 0em 1em 0.75em 1em;
+    margin: 0.5em;
     background-color: rgba(1, 212, 250, .4);
     border-radius: 12px;
-    margin-top: 1em;
 }
 
-.index-sub-header p {
+.selector p {
     color: white;
-    display: inline;
-}
-
-h1 {
-    color: white;
-    font-family: "Playfair Display SC", serif;
 }
