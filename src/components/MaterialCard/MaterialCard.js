@@ -27,7 +27,9 @@ function MaterialCard({ material }) {
 							<ul>
 								<li>
 									<p>
-										<strong>Common Locations</strong>
+										<strong>
+											<u>Common Locations</u>
+										</strong>
 									</p>
 									{material.common_locations.map((location, index) => {
 										return <p key={index}>{location}</p>;
@@ -35,13 +37,17 @@ function MaterialCard({ material }) {
 								</li>
 								<li>
 									<p>
-										<strong>Hearts Recovered</strong>
+										<strong>
+											<u>Hearts Recovered</u>
+										</strong>
 									</p>
 									<p>{material.hearts_recovered}</p>
 								</li>
 								<li>
 									<p>
-										<strong>Cooking Effect</strong>
+										<strong>
+											<u>Cooking Effect</u>
+										</strong>
 									</p>
 									<p>
 										{material.cooking_effect === ""
@@ -52,7 +58,9 @@ function MaterialCard({ material }) {
 								</li>
 								<li>
 									<p>
-										<strong>Description</strong>
+										<strong>
+											<u>Description</u>
+										</strong>
 									</p>
 									<p>{material.description}</p>
 								</li>

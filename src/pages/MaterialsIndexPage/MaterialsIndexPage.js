@@ -175,15 +175,22 @@ function MaterialsIndexPage() {
 		<>
 			<div className="index-sub-header">
 				<div className="selector">
-					<p>Sort: </p>
+					<p>
+						<i class="fa-solid fa-heart"></i> <strong>Sort:</strong>
+					</p>
 					<Select options={sortOptions} onChange={handleSort} />
 				</div>
 				<div className="selector">
-					<p>Filter by location: </p>
+					<p>
+						<i class="fa-solid fa-map"></i> <strong>Filter by location:</strong>
+					</p>
 					<Select options={locations} onChange={handleLocationFilter} />
 				</div>
 				<div className="selector">
-					<p>Filter by cooking effect: </p>
+					<p>
+						<i class="fa-solid fa-utensils"></i>{" "}
+						<strong>Filter by cooking effect:</strong>
+					</p>
 					<Select
 						options={cookingEffects}
 						onChange={handleCookingEffectFilter}
