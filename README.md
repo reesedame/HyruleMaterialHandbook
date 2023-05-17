@@ -10,9 +10,13 @@ This app is an index of the gatherable materials featured in Legend of Zelda: Br
 
 ## Screenshots
 
+![Home Page](./public/assets/HomePage.png)
+![All Materials](./public/assets/AllMaterials.png)
+![Filtered Materials](./public/assets/FilteredMaterials.png)
+
 ## Getting Started
 
-Check out the app here! Upon loading, you will see a home page where you can navigate to the materials. All materials will be shown in alphabetical order. You can click on a material's "Show Details" button to view its details. If you would like to sort or filter the materials, you can do so using the dropdown menus that are beneath the navigation bar.
+[Check out the app here!](https://hyrule-material-handbook.netlify.app/) Upon loading, you will see a home page where you can navigate to the materials. All materials will be shown in alphabetical order. You can click on a material's "Show Details" button to view its details. If you would like to sort or filter the materials, you can do so using the dropdown menus that are beneath the navigation bar.
 
 ## Future Enhancements
 
