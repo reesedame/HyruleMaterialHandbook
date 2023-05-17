@@ -95,31 +95,6 @@ function MaterialsIndexPage() {
 		fetchMaterials();
 	}, []);
 
-	// function handleLocationFilter(selectedLocation) {
-	// 	if (materials === allMaterials) {
-	// 		if (selectedLocation.value === "All Locations") {
-	// 			setMaterials(allMaterials);
-	// 		} else {
-	// 			let filteredMaterials = [];
-	// 			allMaterials.forEach((material) => {
-	// 				if (material.common_locations.includes(selectedLocation.value)) {
-	// 					filteredMaterials.push(material);
-	// 				}
-	// 			});
-	// 			setMaterials(filteredMaterials);
-	// 		}
-	// 	} else {
-	// 		let currentMaterials = [...materials];
-	// 		let filteredMaterials = [];
-	// 		currentMaterials.forEach((material) => {
-	// 			if (material.common_locations.includes(selectedLocation.value)) {
-	// 				filteredMaterials.push(material);
-	// 			}
-	// 		});
-	// 		setMaterials(filteredMaterials);
-	// 	}
-	// }
-
 	function handleLocationFilter(selectedLocation) {
 		let filteredMaterials = [];
 		if (selectedLocation.value === "All Locations") {
@@ -171,20 +146,6 @@ function MaterialsIndexPage() {
 			setMaterials(doubleFilteredMaterials);
 		}
 	}
-
-	// function handleCookingEffectFilter(selectedCookingEffect) {
-	// 	if (selectedCookingEffect.value === "All") {
-	// 		setMaterials(allMaterials);
-	// 	} else {
-	// 		let filteredMaterials = [];
-	// 		allMaterials.forEach((material) => {
-	// 			if (material.cooking_effect === selectedCookingEffect.value) {
-	// 				filteredMaterials.push(material);
-	// 			}
-	// 		});
-	// 		setMaterials(filteredMaterials);
-	// 	}
-	// }
 
 	function handleSort(selectedSortOption) {
 		if (selectedSortOption.value === "Alphabetical") {
