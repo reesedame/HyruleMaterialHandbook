@@ -35,6 +35,7 @@ function MaterialsIndexPage() {
 			// Set materials & allMaterials
 			const materialDataObject = await response.json();
 			const materialDataArray = materialDataObject.data;
+			// API returns materials in a random order, so the array is sorted to give users a consistent experience
 			materialDataArray.sort((a, b) =>
 				a.name > b.name ? 1 : a.name < b.name ? -1 : 0
 			);
@@ -59,6 +60,7 @@ function MaterialsIndexPage() {
 				value: "All Locations",
 				label: "All Locations",
 			});
+			// This array of unique locations is used for the options of the filter by location feature
 			setLocations(locationsArray);
 
 			// Set cooking effects
@@ -85,6 +87,7 @@ function MaterialsIndexPage() {
 				value: "All",
 				label: "All",
 			});
+			// This array of unique cooking effects is used for the options of the filter by cokking effect feature
 			setCookingEffects(cookingEffectsArray);
 		} catch (error) {
 			return (
@@ -100,6 +103,9 @@ function MaterialsIndexPage() {
 		fetchMaterials();
 	}, []);
 
+	// allMaterials array is filtered based on the selectedLocation, generating a filtered array
+	// If a cooking effect filter has been applied, the newly generated filtered array is compared to the cooking effect filtered array
+	// Materials that are in the location filtered array AND the cooking effect filtered array are included in the new array doubleFilteredMaterials
 	function handleLocationFilter(selectedLocation) {
 		let filteredMaterials = [];
 		if (selectedLocation.value === "All Locations") {
@@ -123,6 +129,9 @@ function MaterialsIndexPage() {
 		}
 	}
 
+	// allMaterials array is filtered based on the selectedCookingEffect, generating a filtered array
+	// If a location filter has been applied, the newly generated filtered array is compared to the location filtered array
+	// Materials that are in the location filtered array AND the cooking effect filtered array are included in the new array doubleFilteredMaterials
 	function handleCookingEffectFilter(selectedCookingEffect) {
 		let filteredMaterials = [];
 		if (selectedCookingEffect.value === "All") {
@@ -146,6 +155,8 @@ function MaterialsIndexPage() {
 		}
 	}
 
+	// allMaterials is sorted based upon the selectedSortOption
+	// The resulting sorted materials are then compared to the current materials (ie re-filtered) to ensure the filtering persists
 	function handleSort(selectedSortOption) {
 		let sortedMaterials = [...allMaterials];
 		if (selectedSortOption.value === "Alphabetical") {
