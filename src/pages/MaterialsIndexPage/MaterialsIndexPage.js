@@ -87,7 +87,12 @@ function MaterialsIndexPage() {
 			});
 			setCookingEffects(cookingEffectsArray);
 		} catch (error) {
-			console.log(error);
+			return (
+				<>
+					<h1>Something went wrong!</h1>
+					<h2>Please try again later...</h2>
+				</>
+			);
 		}
 	};
 

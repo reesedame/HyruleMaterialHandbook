@@ -1,6 +1,5 @@
 import "./MaterialCard.css";
 import { useState } from "react";
-// import HeartContainers from "../HeartContainers/HeartContainers";
 
 function MaterialCard({ material }) {
 	const [detailsHidden, setDetailsHidden] = useState(true);
