@@ -22,7 +22,6 @@ function MaterialCard({ material }) {
 						<button onClick={() => setDetailsHidden(!detailsHidden)}>
 							Hide Details
 						</button>
-						{/* <img src={material.image} alt={material.name} /> */}
 						<div className="detail-contents">
 							<ul>
 								<li>
