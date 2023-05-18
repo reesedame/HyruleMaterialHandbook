@@ -142,14 +142,12 @@ function MaterialsIndexPage() {
 	}
 
 	function handleSort(selectedSortOption) {
+		let sortedMaterials = [...allMaterials];
 		if (selectedSortOption.value === "Alphabetical") {
-			let sortedMaterials = [...materials];
 			sortedMaterials.sort((a, b) =>
 				a.name > b.name ? 1 : a.name < b.name ? -1 : 0
 			);
-			setMaterials(sortedMaterials);
 		} else if (selectedSortOption.value === "Hearts Recovered: High - Low") {
-			let sortedMaterials = [...materials];
 			sortedMaterials.sort((a, b) =>
 				a.hearts_recovered < b.hearts_recovered
 					? 1
@@ -157,9 +155,7 @@ function MaterialsIndexPage() {
 					? -1
 					: 0
 			);
-			setMaterials(sortedMaterials);
 		} else {
-			let sortedMaterials = [...materials];
 			sortedMaterials.sort((a, b) =>
 				a.hearts_recovered > b.hearts_recovered
 					? 1
@@ -167,8 +163,12 @@ function MaterialsIndexPage() {
 					? -1
 					: 0
 			);
-			setMaterials(sortedMaterials);
 		}
+		setAllMaterials(sortedMaterials);
+		const reFilteredMaterials = sortedMaterials.filter((material) =>
+			materials.includes(material)
+		);
+		setMaterials(reFilteredMaterials);
 	}
 
 	return (
@@ -176,20 +176,21 @@ function MaterialsIndexPage() {
 			<div className="index-sub-header">
 				<div className="selector">
 					<p>
-						<i class="fa-solid fa-heart"></i> <strong>Sort:</strong>
+						<i className="fa-solid fa-heart"></i> <strong> Sort:</strong>
 					</p>
 					<Select options={sortOptions} onChange={handleSort} />
 				</div>
 				<div className="selector">
 					<p>
-						<i class="fa-solid fa-map"></i> <strong>Filter by location:</strong>
+						<i className="fa-solid fa-map"></i>
+						<strong> Filter by location:</strong>
 					</p>
 					<Select options={locations} onChange={handleLocationFilter} />
 				</div>
 				<div className="selector">
 					<p>
-						<i class="fa-solid fa-utensils"></i>{" "}
-						<strong>Filter by cooking effect:</strong>
+						<i className="fa-solid fa-utensils"></i>
+						<strong> Filter by cooking effect:</strong>
 					</p>
 					<Select
 						options={cookingEffects}

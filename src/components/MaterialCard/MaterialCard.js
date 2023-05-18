@@ -8,7 +8,7 @@ function MaterialCard({ material }) {
 	return (
 		<>
 			{detailsHidden ? (
-				<div className="details-hidden">
+				<div className="material-card">
 					<h2 className="material-name">{material.name.toUpperCase()}</h2>
 					<button onClick={() => setDetailsHidden(!detailsHidden)}>
 						Show Details
@@ -17,7 +17,7 @@ function MaterialCard({ material }) {
 				</div>
 			) : (
 				<>
-					<div className="details-shown">
+					<div className="material-card">
 						<h2 className="material-name">{material.name.toUpperCase()}</h2>
 						<button onClick={() => setDetailsHidden(!detailsHidden)}>
 							Hide Details

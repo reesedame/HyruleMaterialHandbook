@@ -1,8 +1,7 @@
-.details-hidden {
+.material-card {
     padding: 1em;
     display: grid;
     justify-items: center;
-    margin-bottom: 1em;
     background-color: rgba(1, 212, 250, .5);
     color: white;
     border-radius: 12px;
@@ -13,8 +12,8 @@
 
 button {
     border-radius: 12px;
-    margin-top: 0;
-    margin-bottom: 1em;
+    /* margin-top: 0;
+    margin-bottom: 1em; */
     background-color: darkgreen;
     color: white;
     padding: 0.5em;
@@ -24,24 +23,16 @@ button {
 
 img {
     border-radius: 12px;
-}
-
-.details-shown {
-    padding: 1em;
-    display: grid;
-    justify-items: center;
-    background-color: rgba(1, 212, 250, .5);
-    color: white;
-    border-radius: 12px;
-    height: 425px;
-    width: 300px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    justify-self: center;
+    align-self: center;
 }
 
 .detail-contents {
-    max-height: 300px;
     margin: 0px;
     padding: 0px;
+    max-height: 280px;
+    align-self: center;
+    justify-self: center;
 }
 
 .detail-contents > ul {
@@ -63,4 +54,6 @@ li > p {
     margin-top: 0.5em;
     margin-bottom: 0;
     padding: 0;
+    justify-self: center;
+    align-self: center;
 }
