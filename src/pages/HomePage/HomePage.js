@@ -4,9 +4,13 @@ import "./HomePage.css";
 function HomePage() {
 	return (
 		<div className="home-page-container">
-			<div className="title">
-				<h1>Hyrule Material Handbook</h1>
-				<h2>Legend of Zelda: Breath of the Wild</h2>
+			<div className="title-container">
+				<img
+					src="./assets/GameTitle.svg"
+					alt="Legend of Zelda: Breath of the Wild"
+					className="game-title"
+				/>
+				<h1 id="app-title">Hyrule Material Handbook</h1>
 			</div>
 			<div className="home-page-content">
 				<h3 id="welcome-header">Welcome!</h3>

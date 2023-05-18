@@ -3,9 +3,17 @@
     justify-items: center;
     height: 100vh;
     width: 100vw;
+    animation: fadeIn 5s;
+    row-gap: 1em;
+    padding-top: 1em;
 }
 
-.title {
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.title-container {
     padding: 1em;
     background-color: rgba(1, 212, 250, .6);
     color: white;
@@ -15,9 +23,18 @@
     max-height: fit-content;
     font-family: "Playfair Display SC", serif;
     align-self: center;
-    margin-bottom: 2em;
-    margin-top: 2em;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#app-title {
+    font-size: 2.5em;;
+}
+
+.game-title {
+    filter: invert(100%) sepia(3%) saturate(11%) hue-rotate(333deg) brightness(103%) contrast(102%);
+    /* filter: invert(57%) sepia(100%) saturate(305%) hue-rotate(8deg) brightness(102%) contrast(88%); */
+    height: 8em;
+    align-self: flex-end;
 }
 
 .home-page-content {
