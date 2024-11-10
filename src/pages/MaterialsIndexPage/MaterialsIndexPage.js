@@ -29,7 +29,7 @@ function MaterialsIndexPage() {
 	const fetchMaterials = async () => {
 		try {
 			const response = await fetch(
-				"https://botw-compendium.herokuapp.com/api/v2/category/materials"
+				"https://botw-compendium.herokuapp.com/api/v3/compendium/category/materials"
 			);
 
 			// Set materials & allMaterials
